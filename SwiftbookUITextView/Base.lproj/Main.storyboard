@@ -1,24 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftbookUITextView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZj-Sz-PtU">
+                                <rect key="frame" x="31" y="210" width="353" height="447"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Select a Real Device
+Before you distribute your app, launch it on a real device. Connect the device to your Mac, and choose the device in the run destination menu. For macOS versions of an iPad app, choose My Mac (the Mac running Xcode) as the device.
+If you choose a real device, add your Apple ID in Accounts preferences and assign the project to a team on the Signing &amp; Capabilities pane of the project editor. A single individual constitutes a one-person team. For macOS apps, you need to code sign the app if you enable certain capabilities. If you belong to the Apple Developer Program, you need to register the device before you can run the app.
+You can also run iOS and tvOS apps on a wireless device if you pair the device with Xcode. For example, you can pair an Apple TV that’s already on your network with Xcode so it appears as a run destination in the toolbar. For watch-only apps, you can run the watchOS app over the paired iOS device.
+For more details on capabilities and code signing, see Adding Capabilities to Your App.
+Run the App
+Click the Run button to build and run the app on the selected simulated or real device. View the status of the build in the activity area of the toolbar.
+If the build is successful, Xcode runs the app and opens a debugging session in the debug area. Use the controls in the debug area to step through your code, inspect variables, and interact with the debugger.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Js-mX-eeI">
+                                <rect key="frame" x="100" y="108" width="215" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="3uj-Gk-hCE"/>
+                                    <constraint firstAttribute="width" constant="215" id="sba-HD-MuH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="JZj-Sz-PtU" firstAttribute="top" secondItem="1Js-mX-eeI" secondAttribute="bottom" constant="64" id="HeG-CU-p2v"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JZj-Sz-PtU" secondAttribute="trailing" constant="30" id="JJV-gn-bLf"/>
+                            <constraint firstItem="JZj-Sz-PtU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="PYi-dV-v78"/>
+                            <constraint firstItem="1Js-mX-eeI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="aLT-Wb-xqR"/>
+                            <constraint firstItem="1Js-mX-eeI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="lIH-S0-eue"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Js-mX-eeI" secondAttribute="trailing" constant="99" id="mpN-5E-NMp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JZj-Sz-PtU" secondAttribute="bottom" constant="205" id="uq8-vf-0dY"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="1Js-mX-eeI" id="bJJ-aB-ATG"/>
+                        <outlet property="textView" destination="JZj-Sz-PtU" id="OmP-3j-B1A"/>
+                        <outlet property="textViewBottomConstraint" destination="uq8-vf-0dY" id="c7T-Qn-2gf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="90.401785714285708"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
