@@ -35,27 +35,43 @@ If the build is successful, Xcode runs the app and opens a debugging session in 
                                 <rect key="frame" x="100" y="108" width="215" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="3uj-Gk-hCE"/>
-                                    <constraint firstAttribute="width" constant="215" id="sba-HD-MuH"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="215" id="sba-HD-MuH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="zC6-9d-NiL">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qLK-fD-mCX">
+                                <rect key="frame" x="31" y="210" width="353" height="4"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
+                            <constraint firstItem="JZj-Sz-PtU" firstAttribute="top" secondItem="qLK-fD-mCX" secondAttribute="bottom" constant="-4" id="0le-Qa-4Wd"/>
+                            <constraint firstItem="qLK-fD-mCX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="166" id="5rr-Na-trF"/>
                             <constraint firstItem="JZj-Sz-PtU" firstAttribute="top" secondItem="1Js-mX-eeI" secondAttribute="bottom" constant="64" id="HeG-CU-p2v"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JZj-Sz-PtU" secondAttribute="trailing" constant="30" id="JJV-gn-bLf"/>
                             <constraint firstItem="JZj-Sz-PtU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="PYi-dV-v78"/>
+                            <constraint firstItem="zC6-9d-NiL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="394" id="YRS-Ge-Fop"/>
                             <constraint firstItem="1Js-mX-eeI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="aLT-Wb-xqR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zC6-9d-NiL" secondAttribute="trailing" constant="197" id="cLg-wI-9mN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qLK-fD-mCX" secondAttribute="trailing" constant="30" id="dv7-jq-H4a"/>
+                            <constraint firstItem="qLK-fD-mCX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="fjh-ci-p8b"/>
+                            <constraint firstItem="zC6-9d-NiL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="197" id="hbp-Ub-ATH"/>
                             <constraint firstItem="1Js-mX-eeI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="lIH-S0-eue"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Js-mX-eeI" secondAttribute="trailing" constant="99" id="mpN-5E-NMp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zC6-9d-NiL" secondAttribute="bottom" constant="404" id="tRR-Sa-KDG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JZj-Sz-PtU" secondAttribute="bottom" constant="205" id="uq8-vf-0dY"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="zC6-9d-NiL" id="fSI-Uz-rt1"/>
                         <outlet property="label" destination="1Js-mX-eeI" id="bJJ-aB-ATG"/>
+                        <outlet property="progressView" destination="qLK-fD-mCX" id="geG-xR-dtA"/>
                         <outlet property="textView" destination="JZj-Sz-PtU" id="OmP-3j-B1A"/>
                         <outlet property="textViewBottomConstraint" destination="uq8-vf-0dY" id="c7T-Qn-2gf"/>
                     </connections>

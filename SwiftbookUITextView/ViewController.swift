@@ -11,11 +11,21 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var progressView: UIProgressView!
     
     @IBOutlet weak var textViewBottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        textView.isHidden = true
+        //textView.alpha = 0
+        activityIndicatorView.hidesWhenStopped = true
+        activityIndicatorView.color = .white
+        activityIndicatorView.startAnimating()
+       
+        
         
         textView.delegate = self // назначение делегата, того кто будет нести ответственность за использование методов
         textView.text = ""
@@ -24,6 +34,18 @@ class ViewController: UIViewController {
         textView.backgroundColor = self.view.backgroundColor
         textView.layer.cornerRadius = 10
         
+        
+        progressView.setProgress(0, animated: true)
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            if self.progressView.progress != 1 {
+                self.progressView.progress += 0.2
+            } else {
+                self.textView.isHidden = false
+                self.activityIndicatorView.stopAnimating()
+                self.progressView.isHidden = true
+            }
+        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     
@@ -55,6 +77,7 @@ class ViewController: UIViewController {
         
         textView.scrollRangeToVisible(textView.selectedRange)
     }
+    
 
 }
 
